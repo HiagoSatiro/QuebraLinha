@@ -15,9 +15,9 @@ Retorne o todo o texto, com o máximo de palavras por linha, mas sem
 * Não utilize funções prontas, como p.ex. o wordwrap do PHP. O objetivo deste exercício é que você desenvolva o algoritmo indicado.
 
 ## Parametros
-* @param string $text -> O texto que será utilizado como entrada.
-* @param int $length -> Em quantos caracteres a linha deverá ser quebrada.
-* @return array -> Um array de strings equivalente ao texto recebido por parâmetro porém respeitando o comprimento de linha e as regras especificadas acima.
+* **@param string $text** -> O texto que será utilizado como entrada.
+* **@param int $length** -> Em quantos caracteres a linha deverá ser quebrada.
+* **@return array** -> Um array de strings equivalente ao texto recebido por parâmetro porém respeitando o comprimento de linha e as regras especificadas acima.
 
 ## Licença
 Esse projeto esta protegido pela licença MIT - veja [LICENSE](LICENSE) para mais detalhes.
