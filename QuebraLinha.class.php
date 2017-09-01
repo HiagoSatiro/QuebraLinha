@@ -109,7 +109,7 @@
 
           }
 
-          //Testanto outro retorno especificado nos requisitos
+          //Adaptando o retorno da função para o especificado nos requisitos
           $retorno2 = array();
           $pal = 0;
           $lin = 0;
@@ -130,11 +130,6 @@
             $tamanho++;
           }
 
-          //Testando correção de linhas
-
-
-          print_r($retorno2);
-          //return $retorno;
           return $retorno2;
         }
 
