@@ -123,7 +123,7 @@
             else{
               $lin++;
               $posicao = strpos($retorno[$pal], '<br>');
-              $retorno2[$lin] .=substr($texto, $posicao+4);
+              $retorno2[$lin] .=substr($retorno[$pal], $posicao+4);
               $pal++;
             }
           }
