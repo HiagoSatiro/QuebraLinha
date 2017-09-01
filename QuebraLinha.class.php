@@ -35,12 +35,10 @@
               case ($lenghtPalavra < $length): //Se a palavra se encaixa dentro do limite definido
                 $retorno[$lin] .= $palavra;
                 $limiteLinha += strlen($palavra); //Incrementa o tamanho da palavra ao contador
-                //echo $palavra;
               break;
 
               case ($lenghtPalavra == $length):  //Se a palavra se encaixa ainda dentro do limite mais exatamente dentro do limite
                 $retorno[$lin] .= $palavra;
-                //echo $palavra;
                 $lin++;
                 $limiteLinha = 0; //Zera o contador pois ja deu o limite dessa linha
               break;
@@ -66,7 +64,6 @@
                             //Se necessitar de mais uma linha
                             $limiteLinha = strlen(substr($palavra, ($length * $i), $length)); //Quebra a linha na posição que parou
                             $retorno[$lin] .= $linha;
-                            echo "Conteudo: ".$linha;
                             $lin++;
                           break;
 
@@ -74,7 +71,6 @@
                             //Se encaixar na linha
                             $limiteLinha = strlen(substr($palavra, ($length * $i) - $limiteLinha, $length)); //Define a posição d alinha que parou e prossegue para proxima palavra
                             $retorno[$lin] .= $linha;
-                            echo "Conteudo: ".$linha;
                           break;
 
                           case ($lengthPalavraGrande == $caracteresDisponiveis):
@@ -92,13 +88,11 @@
                         //Se tiver alguma palavra na linha
                         $lin++;
                         $retorno[$lin] .= $linha;
-                        echo "Conteudo: ".$linha;
                         $limiteLinha = strlen(substr($palavra, ($length * $i) , $length));  //Retoma o contaddor
                       }
                       else{
                         //Se estiver vazia
                         $retorno[$lin] .= $linha;
-                        echo "Conteudo: ".$linha;
                         $lin++;
                         $limiteLinha = 0; //Zera o contador
                       }
@@ -112,7 +106,6 @@
 
                   $lin++;
                   $retorno[$lin] .= $palavra;
-                  echo "Conteudo: ".$palavra;
                   $limiteLinha = strlen($palavra);  //Incrementa o tamanho da palavra no contador
                 }
               break;
