@@ -1,7 +1,5 @@
 <?php
 
-namespace Galoa\exercicios;
-
 /**
  * Define uma interface para o exercício de quebra de linha.
  */
@@ -36,4 +34,15 @@ interface TextWrapExerciseInterface {
    */
   public static function textWrap(string $text, int $length): array;
 
+  /**
+    * Imprime na tela o texto formatado recebe como parametro o vetor de palavras
+    * que foi formatado pela função textWrap
+    *
+    * @param array $text
+    *   O texto ja formatado pela função textWrap
+    */
+  public static function showText(array $text);
+
 }
+
+?>
