@@ -109,7 +109,27 @@
 
           }
 
-          return $retorno;
+          //Testanto outro retorno especificado nos requisitos
+          $retorno2 = array();
+          $pal = 0;
+          $lin = 0;
+          foreach($retorno as $key => $value){
+
+            if (strpos($retorno[$pal], "<br>") === false){
+
+              $retorno2[$lin] .= $retorno[$pal];
+              $pal++;
+            }
+            else{
+              $lin++;
+              $retorno2[$lin] .= $retorno[$pal];
+              $pal++;
+
+            }
+
+          }
+
+          return $retorno2;
         }
 
         /**

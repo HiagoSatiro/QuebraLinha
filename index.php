@@ -1,3 +1,8 @@
+<?php
+  ini_set('display_erros', 0);
+  error_reporting(0);
+ ?>
+
 <html>
 
   <head>
