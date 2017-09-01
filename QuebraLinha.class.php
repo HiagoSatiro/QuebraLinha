@@ -84,7 +84,7 @@
                     }
                     else{
 
-                      if ($limiteLinha != 0){
+                      if ($limiteLinha - 1 != 0 || $limiteLinha - 1 != -1){
                         //Se tiver alguma palavra na linha
                         $lin++;
                         $retorno[$lin] .= $linha;
