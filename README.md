@@ -5,7 +5,7 @@
 * **Gabriel Mazurco Ribeiro**
 
 ## Metodologia
-* **PoG**
+* **PoG** - Programação Orientada a Gambiarra
 
 ## Observações
 Retorne o todo o texto, com o máximo de palavras por linha, mas sem
