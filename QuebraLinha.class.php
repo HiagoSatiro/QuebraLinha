@@ -118,8 +118,8 @@
 
             if (strpos($retorno[$pal], "<br>") === false){
 
-              $retorno2[$lin] .= $retorno[$pal];
-              $pal++;
+                $retorno2[$lin] .= $retorno[$pal];
+                $pal++;
             }
             else{
               $lin++;
