@@ -113,7 +113,6 @@
           $retorno2 = array();
           $pal = 0;
           $lin = 0;
-          $tamanho = 0;
           foreach($retorno as $key => $value){
 
             if (strpos($retorno[$pal], "<br>") === false){
@@ -127,7 +126,6 @@
               $retorno2[$lin] .=substr($texto, $posicao+11);
               $pal++;
             }
-            $tamanho++;
           }
 
           return $retorno2;

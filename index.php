@@ -30,9 +30,10 @@
         //Formatando texto e o imprimindo
         $textoFormatado = $obj->textWrap($textoBruto, $quantidadeCaracteres);
 
+        echo "TEXTO FORMATADO SERÁ IMPRESSO ABAIXO!";
         echo "<br>--------------------------------------------------------------------------<br>";
-
         $obj->showText($textoFormatado);
+        echo "<br>--------------------------------------------------------------------------<br>";
 
       ?>
 
