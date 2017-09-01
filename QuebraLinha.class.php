@@ -20,6 +20,7 @@
           //Definindo Variáveis de uso geral
           $limiteLinha = 0; //Contador que armazena a posicao atual da linha que está
           $palavraGrande = 0; //Armazena o tamanho de uma palavra grande quando há uma
+          $lin = 0; //Contador para o vetor de string de retorno
           $retorno = array(); //Vetor de retorno da função, sera adicionado palavras nele ao decorrer do método
 
           $text = explode(" ", $text);  //Método que divide uma string bruta palavra por palavra
@@ -32,12 +33,15 @@
             switch ($lenghtPalavra) {
 
               case ($lenghtPalavra < $length): //Se a palavra se encaixa dentro do limite definido
+                $retorno[$lin] .= $palavra;
                 $limiteLinha += strlen($palavra); //Incrementa o tamanho da palavra ao contador
-                array_push($retorno, $palavra); //Adiciona ao vetor de retorno a palavra
+                //echo $palavra;
               break;
 
               case ($lenghtPalavra == $length):  //Se a palavra se encaixa ainda dentro do limite mais exatamente dentro do limite
-                array_push($retorno, $palavra."<br>");  //Adiciona ao vetor de retorno a palavra
+                $retorno[$lin] .= $palavra;
+                //echo $palavra;
+                $lin++;
                 $limiteLinha = 0; //Zera o contador pois ja deu o limite dessa linha
               break;
 
@@ -46,6 +50,7 @@
                 if (strlen($palavra) - 1 > $length){  //Se for grande o suficiente a ponto de necessitar mais de 1 linha
 
                   $palavraGrande = (strlen($palavra) - 1) / $length; //Calcula o tamanho que a palavra ira ocupar
+                  echo $palavraGrande;
 
                   for ($i = 0; $i <= $palavraGrande; $i++){ //Percorre a palavra grande caracter por caracter
 
@@ -59,19 +64,23 @@
 
                           case ($lengthPalavraGrande > $caracteresDisponiveis):
                             //Se necessitar de mais uma linha
-                            array_push($retorno, "<br>".$linha); //Adiciona ao vetor de retorno a palavra
                             $limiteLinha = strlen(substr($palavra, ($length * $i), $length)); //Quebra a linha na posição que parou
+                            $retorno[$lin] .= $linha;
+                            echo "Conteudo: ".$linha;
+                            $lin++;
                           break;
 
                           case ($lengthPalavraGrande < $caracteresDisponiveis):
                             //Se encaixar na linha
-                            array_push($retorno, $linha);  //Adiciona ao vetor de retorno a palavra
                             $limiteLinha = strlen(substr($palavra, ($length * $i) - $limiteLinha, $length)); //Define a posição d alinha que parou e prossegue para proxima palavra
+                            $retorno[$lin] .= $linha;
+                            echo "Conteudo: ".$linha;
                           break;
 
                           case ($lengthPalavraGrande == $caracteresDisponiveis):
                             //Se encaixar exatamente no limite da linha
-                            array_push($retorno, $linha);  //Adiciona ao vetor de retorno a palavra
+                            $retorno[$lin] .= $linha;
+                            $lin++;
                             $limiteLinha = 0; //Zera o contador
                           break;
                         }
@@ -79,14 +88,18 @@
                     }
                     else{
 
-                      if ($limiteLinha - 1 != 0 || $limiteLinha - 1 != -1){
+                      if ($limiteLinha != 0){
                         //Se tiver alguma palavra na linha
-                        array_push($retorno, "<br>".$linha);  //Adiciona ao vetor de retorno a palavra
+                        $lin++;
+                        $retorno[$lin] .= $linha;
+                        echo "Conteudo: ".$linha;
                         $limiteLinha = strlen(substr($palavra, ($length * $i) , $length));  //Retoma o contaddor
                       }
                       else{
                         //Se estiver vazia
-                        array_push($retorno, $linha."<br>"); //Adiciona ao vetor de retorno a palavra
+                        $retorno[$lin] .= $linha;
+                        echo "Conteudo: ".$linha;
+                        $lin++;
                         $limiteLinha = 0; //Zera o contador
                       }
 
@@ -97,7 +110,9 @@
                 }
                 else{ //Se for grande e caber somente em uma linha
 
-                  array_push($retorno, "<br>".$palavra);  //Adiciona ao vetor de retorno a palavra
+                  $lin++;
+                  $retorno[$lin] .= $palavra;
+                  echo "Conteudo: ".$palavra;
                   $limiteLinha = strlen($palavra);  //Incrementa o tamanho da palavra no contador
                 }
               break;
@@ -109,26 +124,9 @@
 
           }
 
-          //Adaptando o retorno da função para o especificado nos requisitos
-          $retorno2 = array();
-          $pal = 0;
-          $lin = 0;
-          foreach($retorno as $key => $value){
+          //print_r($retorno);
 
-            if (strpos($retorno[$pal], "<br>") === false){
-
-                $retorno2[$lin] .= $retorno[$pal];
-                $pal++;
-            }
-            else{
-              $lin++;
-              $posicao = strpos($retorno[$pal], '<br>');
-              $retorno2[$lin] .=substr($retorno[$pal], $posicao+4);
-              $pal++;
-            }
-          }
-
-          return $retorno2;
+          return $retorno;
         }
 
         /**
