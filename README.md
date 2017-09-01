@@ -1,11 +1,11 @@
 # QuebraLinha
  Quebra uma string em diversas strings com tamanho passado por parâmetro.  Suponha que você tenha uma string com um texto bastante longo. Você quer imprimir na tela todo o texto, mas garantir um limite máximo de N caracteres por linha.
 
-## Objetivo
-Desafio do processo seletivo da empresa Chuva Inc.
-
 ## Desenvolvedor
 * **Gabriel Mazurco Ribeiro**
+
+## Objetivo
+Desafio do processo seletivo da empresa Chuva Inc.
 
 ## Metodologia
 * **PoG** - Programação Orientada a Gambiarra
