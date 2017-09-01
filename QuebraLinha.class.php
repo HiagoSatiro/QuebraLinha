@@ -48,7 +48,6 @@
                 if (strlen($palavra) - 1 > $length){  //Se for grande o suficiente a ponto de necessitar mais de 1 linha
 
                   $palavraGrande = (strlen($palavra) - 1) / $length; //Calcula o tamanho que a palavra ira ocupar
-                  echo $palavraGrande;
 
                   for ($i = 0; $i <= $palavraGrande; $i++){ //Percorre a palavra grande caracter por caracter
 
