@@ -113,6 +113,7 @@
           $retorno2 = array();
           $pal = 0;
           $lin = 0;
+          $tamanho = 0;
           foreach($retorno as $key => $value){
 
             if (strpos($retorno[$pal], "<br>") === false){
@@ -122,13 +123,18 @@
             }
             else{
               $lin++;
-              $retorno2[$lin] .= $retorno[$pal];
+              $posicao = strpos($texto, '<br>');
+              $retorno2[$lin] .=substr($texto, $posicao+11);
               $pal++;
-
             }
-
+            $tamanho++;
           }
 
+          //Testando correção de linhas
+
+
+          print_r($retorno2);
+          //return $retorno;
           return $retorno2;
         }
 
@@ -143,6 +149,7 @@
 
           foreach ($text as $key => $value) {
             print($value);  //Para cada elemento do vetor imprime-o na tela
+            echo "<br>";
           }
 
         }

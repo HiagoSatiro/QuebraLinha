@@ -25,13 +25,16 @@
         uma string bruta e ela deve retorna um array de string ja formatado para se realizar a impressão do mesmo, esse
         texto tem que ser bem grande msm por que eu quero que isso seja grande por que se não for grande não vai dar, acho que
         ja esta bom vou é parar";
-        $quantidadeCaracteres = 20;
+        $quantidadeCaracteres = 40;
 
         //Instanciando o Objeto de QuebraLinha
         $obj = new QuebraLinha();
 
         //Formatando texto e o imprimindo
         $textoFormatado = $obj->textWrap($textoBruto, $quantidadeCaracteres);
+
+        echo "<br>--------------------------------------------------------------------------<br>";
+
         $obj->showText($textoFormatado);
 
       ?>
