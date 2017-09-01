@@ -4,6 +4,9 @@
 ## Desenvolvedor
 * **Gabriel Mazurco Ribeiro**
 
+## Objetivo
+Desafio do processo seletivo da empresa Chuva Inc.
+
 ## Metodologia
 * **PoG** - Programação Orientada a Gambiarra
 
