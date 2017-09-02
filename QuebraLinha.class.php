@@ -72,13 +72,17 @@
 
                         //Se encaixar na linha
                         $limiteLinha = strlen(substr($palavra, ($length * $i) - $limiteLinha, $length)); //Define a posição d alinha que parou e prossegue para proxima palavra
-                        $retorno[$lin] .= $linha;
+                        for ($j = 0; $j <= strlen($palavra) -1; $j++){
+                          $retorno[$lin] .= $palavra[$j];
+                        }
 
                       }
                       else if ($lengthPalavraGrande == $caracteresDisponiveis){
 
                         //Se encaixar exatamente no limite da linha
-                        $retorno[$lin] .= $linha;
+                        for ($j = 0; $j <= strlen($palavra) -1; $j++){
+                          $retorno[$lin] .= $palavra[$j];
+                        }
                         $lin++;
                         $retorno[$lin] = "";
                         $limiteLinha = 0; //Zera o contador
