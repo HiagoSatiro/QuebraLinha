@@ -22,6 +22,8 @@
           $retorno = array(); //Array de retorno da função
           $retorno[$lin] = ""; //Inicializando oarray para não dar erros futuramente
 
+          if ($length > 0){
+
           $text = explode(" ", $text);  //Método que divide uma string bruta palavra por palavra
           foreach($text as $key => $value) $text[$key] = $value." "; //Adicionando novamente os espaços removidos pelo médoto explode
 
@@ -113,6 +115,12 @@
             }
 
           }
+
+        }
+        else{
+
+          $retorno[$lin] .= "Por favor entre com algum limite válido";
+        }
 
           return $retorno;
         }

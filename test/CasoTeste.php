@@ -14,10 +14,10 @@
     }
 
     function test02(){
-      //Confirma se o retorno é um array denovo mas dessa vez diminuindo tamanho linear para 5
+      //Confirma se o retorno é um array denovo mas dessa vez diminuindo tamanho linear para 1
       $q = new QuebraLinha();
       $textoBruto = "essaPalavraéMuitoMuitoGrande = Texto Digitado por Gabriel Mazurco Ribeiro";
-      $retornoTeste =  $q->textWrap($textoBruto, 5);
+      $retornoTeste =  $q->textWrap($textoBruto, 1);
       $this->assertInternalType('array',$retornoTeste);
     }
 
@@ -32,13 +32,29 @@
     }
 
     function test04(){
-      //Verifica se a string de uma linha contem pelo menos 1 ou mais caracteres
+      //Verifica se todos retornos sao strings com teste de limite inferior
       $q = new QuebraLinha();
-      $textoBruto = "essaPalavraéMuitoMuitoGrande = Texto Digitado por Gabriel Mazurco Ribeiro";
-      $retornoTeste =  $q->textWrap($textoBruto, 5);
+      $textoBruto = "Texto Digitado por Gabriel Mazurco Ribeiro";
+      $retornoTeste =  $q->textWrap($textoBruto, 1);
       foreach ($retornoTeste as $key => $value) {
-        $this->assertStringMatchesFormat('%s', $value);
+        $this->assertInternalType('string',$value);
       }
+    }
+
+    function test05(){
+      //Verifica se Retorna valor inválido com tamanho inválido
+      $q = new QuebraLinha();
+      $textoBruto = "Texto Digitado por Gabriel Mazurco Ribeiro";
+      $retornoTeste =  $q->textWrap($textoBruto, 0);
+      $this->assertEquals("Por favor entre com algum limite válido", $retornoTeste[0]);
+    }
+
+    function test06(){
+      //Verifica se formato do retorno esta como especificado nos requisitos
+      $q = new QuebraLinha();
+      $textoBruto = "Isso e um teste";
+      $retornoTeste =  $q->textWrap($textoBruto, 5);
+      $this->assertEquals(array('Isso ', 'e um ', 'teste '), $retornoTeste);
     }
 
 
