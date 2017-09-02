@@ -8,7 +8,7 @@
 Desafio do processo seletivo da empresa Chuva Inc.
 
 ## Metodologia
-* **PoG** - Programação Orientada a Gambiarra
+* **PoG** 
 
 ## Observações
 Retorne o todo o texto, com o máximo de palavras por linha, mas sem
